@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OriginChain: Traceability Blockchain</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+<header class="w3-container w3-blue-grey">
+  <h1>OriginChain: A Traceability Blockchain</h1>
+</header>
+
+  <div class="w3-bar w3-padding-large w3-sand">
+	<a href=/mobileapp/viewant/ class="w3-btn w3-black">View Antecedents</a>
+	<a href=/mobileapp/move/ class="w3-btn w3-black">Material Movement</a>
+</div>
+
+
+
+    <br>
+    <br>
+            <div class="w3-container w3-grey">
+                <h2>View Antecedents</h2>
+			</div>
+    <table class="w3-table w3-striped">
+        <tr>
+            <th>Transaction Type</th> <th> User ID </th> <th>Transaction Date </th>
+        </tr>
+    {% for transaction in antecedents.all %}
+        <tr>
+            <td> {% if transaction.trans_type == '1' %}
+            Movement In
+            {% else %}
+            Movement Out
+            {% endif %}
+            </td>
+            <td>{{transaction.user_id }} </td>
+            <td> {{transaction.trans_date }} </td>
+        </tr>
+    {% endfor %}
+    </table>
+
+
+  </body>
+</html>

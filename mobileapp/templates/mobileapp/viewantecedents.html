@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OriginChain: Traceability Blockchain</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+<header class="w3-container w3-blue-grey">
+  <h1>OriginChain: A Traceability Blockchain</h1>
+</header>
+
+  <div class="w3-bar w3-padding-large w3-sand">
+	<a href=/mobileapp/viewant/ class="w3-btn w3-black">View Antecedents</a>
+	<a href=/mobileapp/move/ class="w3-btn w3-black">Material Movement</a>
+</div>
+
+
+
+<div class="w3-container w3-padding-large">
+    <br>
+    <br>
+    <div class="w3-card-4">
+        <div class="w3-container w3-grey">
+            <h2>View Antecedents</h2>
+        </div>
+        <form action="{% url 'mobileapp:ShowAntecedents'  %}" method="post">
+            {% csrf_token %}
+            <label>Material ID</label>
+            <input class="w3-input" type="text" name="material_id"  />
+            <input class="w3-button w3-black" type="submit" value="Search" />
+        </form>
+    </div>
+</div>
+
+  </body>
+</html>
